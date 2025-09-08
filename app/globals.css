@@ -8,19 +8,82 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Mirrored font files: one class per font file */
+@font-face {
+  font-family: 'pv-e4af272ccee01ff0-s.p';
+  src: url('/vendor/pokevault/fonts/e4af272ccee01ff0-s.p.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-e4af272ccee01ff0-s-p { font-family: 'pv-e4af272ccee01ff0-s.p', sans-serif; }
+
+@font-face {
+  font-family: 'pv-8e9860b6e62d6359-s';
+  src: url('/vendor/pokevault/fonts/8e9860b6e62d6359-s.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-8e9860b6e62d6359-s { font-family: 'pv-8e9860b6e62d6359-s', sans-serif; }
+
+@font-face {
+  font-family: 'pv-df0a9ae256c0569c-s';
+  src: url('/vendor/pokevault/fonts/df0a9ae256c0569c-s.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-df0a9ae256c0569c-s { font-family: 'pv-df0a9ae256c0569c-s', sans-serif; }
+
+@font-face {
+  font-family: 'pv-581909926a08bbc8-s';
+  src: url('/vendor/pokevault/fonts/581909926a08bbc8-s.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-581909926a08bbc8-s { font-family: 'pv-581909926a08bbc8-s', sans-serif; }
+
+@font-face {
+  font-family: 'pv-97e0cb1ae144a2a9-s';
+  src: url('/vendor/pokevault/fonts/97e0cb1ae144a2a9-s.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-97e0cb1ae144a2a9-s { font-family: 'pv-97e0cb1ae144a2a9-s', sans-serif; }
+
+@font-face {
+  font-family: 'pv-26a46d62cd723877-s';
+  src: url('/vendor/pokevault/fonts/26a46d62cd723877-s.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-26a46d62cd723877-s { font-family: 'pv-26a46d62cd723877-s', sans-serif; }
+
+@font-face {
+  font-family: 'pv-55c55f0601d81cf3-s';
+  src: url('/vendor/pokevault/fonts/55c55f0601d81cf3-s.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-55c55f0601d81cf3-s { font-family: 'pv-55c55f0601d81cf3-s', sans-serif; }
