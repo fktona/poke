@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Navbar() {
@@ -19,9 +20,12 @@ function Navbar() {
               <button className="text-sm text-stone-600 hover:text-stone-950 transition-colors bg-transparent border-none cursor-pointer">
                 Treasury
               </button>
-              <button className="text-sm text-stone-600 hover:text-stone-950 transition-colors bg-transparent border-none cursor-pointer">
+              <Link
+                href="/voting"
+                className="text-sm text-stone-600 hover:text-stone-950 transition-colors bg-transparent border-none cursor-pointer"
+              >
                 Voting
-              </button>
+              </Link>
             </div>
           </div>
           <div className="flex items-center gap-4">

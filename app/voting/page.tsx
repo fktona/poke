@@ -8,7 +8,7 @@ function Page() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center gap-4 mb-4">
             <Link
-              className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors"
+              className="flex font-inter items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors"
               href="/"
             >
               <svg
@@ -33,7 +33,7 @@ function Page() {
             <h1 className="text-3xl font-light tracking-tight mb-2">
               Governance
             </h1>
-            <p className="text-stone-600">
+            <p className="text-stone-600 font-inter">
               Participate in PokéVault's decentralized governance through Realms
             </p>
           </div>
