@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 function Home() {
   return (
     <section
@@ -21,12 +22,12 @@ function Home() {
               Every decision is transparent, every profit is shared.
             </p>{" "}
             <div className="flex items-center gap-4 mb-12">
-              <a
+              <Link
                 href="/treasury"
                 className="md:px-14 px-8 cursor-pointer py-3.5 bg-gradient-to-r from-vault-indigo to-vault-purple text-white rounded-lg hover:shadow-glow transition-all duration-300"
               >
                 View Collection
-              </a>
+              </Link>
               <button className="w-36 cursor-pointer h-12 poke-button duration-300 hover:scale-105 transition-transform"></button>
             </div>{" "}
             <div className="grid grid-cols-3 gap-6">

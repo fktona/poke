@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Treasury() {
@@ -19,12 +20,12 @@ function Treasury() {
               <div className="p-6 border-b border-stone-200">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium">Top Holdings</h3>
-                  <a
+                  <Link
                     className="text-sm text-stone-600 hover:text-stone-950 transition-colors"
                     href="/treasury"
                   >
                     View All Cards
-                  </a>
+                  </Link>
                 </div>
               </div>{" "}
               <div className="divide-y divide-stone-100">

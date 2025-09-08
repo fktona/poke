@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Page() {
@@ -6,7 +7,7 @@ function Page() {
       <div className="border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center gap-4 mb-4">
-            <a
+            <Link
               className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors"
               href="/"
             >
@@ -26,7 +27,7 @@ function Page() {
                 <path d="M19 12H5"></path>
               </svg>
               Back to Home
-            </a>
+            </Link>
           </div>
           <div>
             <h1 className="text-3xl font-light tracking-tight mb-2">
@@ -83,20 +84,20 @@ function Page() {
               <h4 className="font-medium mb-4">Protocol</h4>
               <ul className="space-y-2 text-sm text-stone-600">
                 <li>
-                  <a
+                  <Link
                     className="hover:text-stone-900 transition-colors"
                     href="/treasury"
                   >
                     Treasury
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="hover:text-stone-900 transition-colors"
                     href="/voting"
                   >
                     Governance
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a
@@ -112,28 +113,28 @@ function Page() {
               <h4 className="font-medium mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-stone-600">
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="hover:text-stone-900 transition-colors"
                   >
                     Documentation
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="hover:text-stone-900 transition-colors"
                   >
                     Whitepaper
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="#"
                     className="hover:text-stone-900 transition-colors"
                   >
                     API
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

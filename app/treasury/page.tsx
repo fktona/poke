@@ -3,6 +3,7 @@ import React, { useMemo, useState } from "react";
 import Table from "./_components/table";
 import Treasure from "./_components/treaures";
 import { cards as allCards, Card } from "./data";
+import Link from "next/link";
 
 function Page() {
   const [query, setQuery] = useState("");
@@ -64,7 +65,7 @@ const Heading = ({
 }) => {
   return (
     <div className="mb-8">
-      <a
+      <Link
         className="inline-flex items-center gap-2 text-stone-600 font-inter hover:text-stone-950 transition-colors mb-4"
         href="/"
       >
@@ -84,7 +85,7 @@ const Heading = ({
           <path d="M19 12H5"></path>
         </svg>
         <span className="text-sm">Back to Home</span>
-      </a>
+      </Link>
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-4xl font-light tracking-tight mb-2">
