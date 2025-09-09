@@ -23,21 +23,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link
-        rel="apple-touch-icon"
-        href="https://www.pokevaultsol.com/favicon.png"
-        sizes="180x180"
-      ></link>
-      <link
-        rel="icon"
-        href="https://www.pokevaultsol.com//favicon.png"
-        sizes="32x32"
-      ></link>
-      <link
-        rel="icon"
-        href="https://www.pokevaultsol.com/favicon.png"
-        sizes="16x16"
-      ></link>
       <body className={`${inter.variable} antialiased`}>
         {" "}
         <Navbar />

@@ -73,10 +73,7 @@ function Home() {
           <div className="relative">
             <div className="relative h-96 flex items-center select-none justify-center">
               <div className="absolute inset-0 bg-gradient-radial from-vault-purple/10 via-transparent to-transparent"></div>{" "}
-              <img
-                src="https://www.pokevaultsol.com/cards.png"
-                draggable="false"
-              />
+              <img src="cards.png" draggable="false" />
             </div>
           </div>
         </div>
