@@ -34,7 +34,7 @@ function Page() {
               Governance
             </h1>
             <p className="text-stone-600 font-inter">
-              Participate in PokéVault's decentralized governance through Realms
+              Participate in LeGoat's decentralized governance through Realms
             </p>
           </div>
         </div>
@@ -49,13 +49,13 @@ function Page() {
           ></iframe>
         </div>
       </div>
-      <footer className="border-t border-stone-200 bg-stone-50">
+      <footer className="border-t border-stone-200 bg-stone-50 font-inter">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-xl font-light mb-4">PokéVault</h3>
+              <h3 className="text-xl font-light mb-4">LeGoat</h3>
               <p className="text-stone-600 mb-4 max-w-md">
-                A community-governed protocol for Pokemon card collectors,
+                A community-governed protocol for LeGoat card collectors,
                 powered by decentralized governance and transparent treasury
                 management.
               </p>
@@ -104,7 +104,7 @@ function Page() {
                     href="https://app.realms.today"
                     className="hover:text-stone-900 transition-colors"
                   >
-                    Realms DAO
+                    LeGoat DAO
                   </a>
                 </li>
               </ul>
@@ -141,7 +141,7 @@ function Page() {
           </div>
           <div className="border-t border-stone-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-stone-500">
-              © 2024 PokéVault. Built on Solana.
+              © 2024 LeGoat. Built on Solana.
             </p>
             <div className="flex gap-6 text-sm text-stone-500 mt-4 md:mt-0">
               <a href="#" className="hover:text-stone-700 transition-colors">

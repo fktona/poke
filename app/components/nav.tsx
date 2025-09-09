@@ -8,7 +8,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-12">
             <button className="font-semibold cursor-pointer text-lg bg-gradient-to-b from-[#5237D5] to-white/0 inline-block text-transparent bg-clip-text tracking-tight">
-              PokéVault
+              LeGoat
             </button>
             <div className="hidden md:flex items-center gap-8">
               <button className="text-sm text-stone-600 hover:text-stone-950 transition-colors bg-transparent border-none cursor-pointer">

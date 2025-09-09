@@ -8,9 +8,9 @@ function Overview() {
           <h2 className="text-4xl text-gradient font-light tracking-tight mb-4">
             Core Principles
           </h2>
-          <p className="text-black/70 text-lg font-light max-w-3xl">
-            PokéVault operates on four fundamental principles that ensure
-            fairness, transparency, and sustainable growth for all participants.
+          <p className="text-black/70 text-lg font-light max-w-3xl font-inter">
+            LeGoat operates on four fundamental principles that ensure fairness,
+            transparency, and sustainable growth for all participants.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
@@ -25,7 +25,7 @@ function Overview() {
               <h3 className="text-lg font-medium mb-2">
                 Democratic Governance
               </h3>
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-stone-600 leading-relaxed font-inter">
                 One token equals one vote. Every holder has a voice in
                 determining which cards to acquire and when to sell.
               </p>
@@ -40,7 +40,7 @@ function Overview() {
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-medium mb-2">Transparent Treasury</h3>
-              <p className="text-stone-600 leading-relaxed">
+              <p className="text-stone-600 leading-relaxed font-inter">
                 All transactions, holdings, and financial metrics are publicly
                 visible on-chain. No hidden fees or opaque dealings.
               </p>

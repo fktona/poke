@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PokéVault",
-  description: "PokéVault",
+  title: "LeGoat",
+  description: "LeGoat",
 };
 
 export default function RootLayout({

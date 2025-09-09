@@ -6,7 +6,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-stone-500">
-            © PokéVault DAO. A community-governed protocol.
+            © LeGoat DAO. A community-governed protocol.
           </div>
           <div className="flex items-center gap-4">
             <a

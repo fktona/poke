@@ -14,14 +14,14 @@ function Home() {
             <h1 className="font-display text-5xl font-light mb-6 leading-tight">
               <span className="text-gradient ">Community-owned</span>
               <br />
-              <span className="font-semibold">Pokémon card vault</span>
+              <span className="font-semibold">LeGoat card vault</span>
             </h1>{" "}
-            <p className="text-lg text-black/70 font-light mb-8 leading-relaxed">
+            <p className="text-lg text-black/70 font-light mb-8 font-inter leading-relaxed">
               A decentralized investment fund where token holders collectively
               decide which graded cards to acquire and when to realize profits.
               Every decision is transparent, every profit is shared.
             </p>{" "}
-            <div className="flex items-center gap-4 mb-12">
+            <div className="flex items-center gap-4 mb-12 font-inter">
               <Link
                 href="/treasury"
                 className="md:px-14 px-8 cursor-pointer py-3.5 bg-gradient-to-r from-vault-indigo to-vault-purple text-white rounded-lg hover:shadow-glow transition-all duration-300"
@@ -30,7 +30,7 @@ function Home() {
               </Link>
               <button className="w-36 cursor-pointer h-12 poke-button duration-300 hover:scale-105 transition-transform"></button>
             </div>{" "}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-6 font-inter">
               <div className="card-frame p-4 tilt-card">
                 <div className="text-2xl font-mono font-semibold number-glow text-vault-purple">
                   $25.2K

@@ -9,12 +9,12 @@ function Treasury() {
           <h2 className="text-3xl font-light tracking-tight mb-4">
             Treasury Holdings
           </h2>
-          <p className="text-stone-600 max-w-2xl">
-            Real-time view of the vault's card portfolio. All holdings are
+          <p className="text-stone-600 max-w-2xl font-inter">
+            Real-time view of the LeGoat's card portfolio. All holdings are
             secured in professional-grade storage with full insurance coverage.
           </p>
         </div>{" "}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 font-inter">
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg border border-stone-200">
               <div className="p-6 border-b border-stone-200">
@@ -27,8 +27,8 @@ function Treasury() {
                     View All Cards
                   </Link>
                 </div>
-              </div>{" "}
-              <div className="divide-y divide-stone-100">
+              </div>
+              <div className="divide-y divide-stone-100 font-inter">
                 <div className="p-6 hover:bg-stone-50 transition-colors">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">

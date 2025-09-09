@@ -92,7 +92,7 @@ const Heading = ({
             Treasury Holdings
           </h1>
           <p className="text-stone-600 font-inter">
-            Complete inventory of graded Pokémon cards in the vault
+            Complete inventory of graded Pokémon cards in the LeGoat
           </p>
         </div>
         <div className="flex gap-2 font-inter">
