@@ -1,14 +1,36 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import Table from "./_components/table";
 import Treasure from "./_components/treaures";
-import { cards as allCards, Card } from "./data";
+import { getCards, Card } from "./data";
 import Link from "next/link";
 
 function Page() {
   const [query, setQuery] = useState("");
   const [grade, setGrade] = useState<string>("all");
   const [view, setView] = useState<"grid" | "table">("grid");
+  const [allCards, setAllCards] = useState<Card[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch NFT data on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const cards = await getCards();
+        setAllCards(cards);
+        setError(null);
+      } catch (err) {
+        setError("Failed to load NFT data");
+        console.error("Error fetching NFTs:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const filtered: Card[] = useMemo(() => {
     let results = allCards;
@@ -22,22 +44,53 @@ function Page() {
       );
     }
     if (grade !== "all") {
-      if (grade === "graded") {
-        results = results.filter((c) => Boolean(c.gradeLabel));
-      } else if (grade === "Ungraded") {
-        results = results.filter((c) => !c.gradeLabel);
-      } else {
-        results = results.filter((c) => c.gradeLabel === grade);
-      }
+      results = results.filter((c) => c.gradeLabel === grade);
     }
     return results;
-  }, [query, grade]);
+  }, [query, grade, allCards]);
+
+  if (loading) {
+    return (
+      <div className="pt-20 pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <Heading view={view} setView={setView} />
+          <div className="flex items-center justify-center py-20">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-stone-900 mx-auto mb-4"></div>
+              <p className="text-stone-600 font-inter">Loading NFT data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="pt-20 pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <Heading view={view} setView={setView} />
+          <div className="flex items-center justify-center py-20">
+            <div className="text-center">
+              <p className="text-red-600 font-inter mb-4">{error}</p>
+              <button 
+                onClick={() => window.location.reload()} 
+                className="px-4 py-2 bg-stone-900 text-white rounded-md hover:bg-stone-800 transition-colors"
+              >
+                Retry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="pt-20 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <Heading view={view} setView={setView} />
-        <Stats />
+        <Stats cards={allCards} />
         <Search
           query={query}
           setQuery={setQuery}
@@ -92,7 +145,7 @@ const Heading = ({
             Treasury Holdings
           </h1>
           <p className="text-stone-600 font-inter">
-            Complete inventory of graded Pokémon cards in the LeGoat
+            Complete inventory of NFTs in the treasury
           </p>
         </div>
         <div className="flex gap-2 font-inter">
@@ -158,27 +211,42 @@ const Heading = ({
   );
 };
 
-const Stats = () => {
+const Stats = ({ cards }: { cards: Card[] }) => {
+  const totalValue = cards.reduce((sum, card) => {
+    const price = parseFloat(card.price.replace('$', '').replace(',', ''));
+    return sum + price;
+  }, 0);
+
+  const totalProfit = cards.reduce((sum, card) => {
+    const price = parseFloat(card.price.replace('$', '').replace(',', ''));
+    const trendPercent = parseFloat(card.trendPercent.replace('%', '').replace('+', ''));
+    return sum + (price * trendPercent / 100);
+  }, 0);
+
+  const uniqueCollections = new Set(cards.map(card => card.setTitle)).size;
+
   return (
     <div className="grid grid-cols-2 font-inter md:grid-cols-4 gap-4 mb-8">
       <div className="bg-stone-50 rounded-lg p-4">
         <div className="text-sm text-stone-500 mb-1">Total Value</div>
-        <div className="text-2xl font-medium tabular-nums">$25,192.36</div>
+        <div className="text-2xl font-medium tabular-nums">${totalValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
       </div>
       <div className="bg-stone-50 rounded-lg p-4">
         <div className="text-sm text-stone-500 mb-1">Total Profit (1D)</div>
-        <div className="text-2xl font-medium tabular-nums text-green-600">
-          $148.99
+        <div className={`text-2xl font-medium tabular-nums ${totalProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          ${Math.abs(totalProfit).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
         </div>
-        <div className="text-xs text-green-600">+0.6%</div>
+        <div className={`text-xs ${totalProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+          {totalProfit >= 0 ? '+' : ''}{(totalProfit / totalValue * 100).toFixed(1)}%
+        </div>
       </div>
       <div className="bg-stone-50 rounded-lg p-4">
-        <div className="text-sm text-stone-500 mb-1">Total Cards</div>
-        <div className="text-2xl font-medium tabular-nums">30</div>
+        <div className="text-sm text-stone-500 mb-1">Total NFTs</div>
+        <div className="text-2xl font-medium tabular-nums">{cards.length}</div>
       </div>
       <div className="bg-stone-50 rounded-lg p-4">
-        <div className="text-sm text-stone-500 mb-1">Unique Cards</div>
-        <div className="text-2xl font-medium tabular-nums">30</div>
+        <div className="text-sm text-stone-500 mb-1">Collections</div>
+        <div className="text-2xl font-medium tabular-nums">{uniqueCollections}</div>
       </div>
     </div>
   );
@@ -215,7 +283,7 @@ const Search = ({
         </svg>
         <input
           type="text"
-          placeholder="Search cards..."
+          placeholder="Search NFTs..."
           className="w-full pl-10 pr-4 py-2 border border-stone-200 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-500"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -226,13 +294,10 @@ const Search = ({
         value={grade}
         onChange={(e) => setGrade(e.target.value)}
       >
-        <option value="all">All Grades</option>
-        <option value="PSA 10">PSA 10</option>
-        <option value="PSA 9">PSA 9</option>
-        <option value="PSA 8">PSA 8</option>
-        <option value="PSA 7">PSA 7</option>
-        <option value="graded">All Graded</option>
-        <option value="Ungraded">Ungraded</option>
+        <option value="all">All Token Types</option>
+        <option value="ERC721">ERC721</option>
+        <option value="ERC1155">ERC1155</option>
+        <option value="ERC20">ERC20</option>
       </select>
     </div>
   );
